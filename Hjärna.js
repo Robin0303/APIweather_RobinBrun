@@ -6,9 +6,7 @@ let loc = document.querySelector(".location");
 let icon = document.querySelector(".icon");
 const kelvin = 273;
   
-
 //Funktion som blir triggad när ett speciellt "event" händer.
-
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -33,8 +31,6 @@ window.addEventListener("load", () => {
           Math.floor(info.main.temp - kelvin) + "°C";
           summary.textContent = info.weather[0].description;
           loc.textContent = info.name + "," + info.sys.country;
-          //Här ändras PNG bilden beroende på vilket väder det är
-          //Med hjälp av innerHTML
           let icon1 = info.weather[0].icon;
           icon.innerHTML = 
           `<img src="03d.png" style= 'height:10rem'/>`;
